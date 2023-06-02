@@ -21,4 +21,10 @@ const User = seq.define('user', {
 // 强制同步数据库(创建数据表)
 // User.sync({ force: true });
 
+export class UserModel {
+  id?: number;
+  name?: string;
+  password?: string;
+}
+
 export default User;
