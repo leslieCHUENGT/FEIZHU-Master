@@ -1,10 +1,11 @@
 const Koa = require('koa');
 const cors = require('koa-cors');
-const Router= require('../user/user.router')
+const useRouter = require('../user/user.router')
+const avatarRouter = require('../avatar/avatar.router')
 const { koaBody } = require('koa-body')
 const errHandler = require('./app.middleware')
 const { ALLOW_ORIGIN } = require('./app.config')
-import { Context, Next } from "koa";
+
 
 const app = new Koa()
 
@@ -21,7 +22,9 @@ app.use(cors({
 /**
  * 启用路由
  */
-app.use(Router.routes())
+app.use(useRouter.routes())
+app.use(avatarRouter.routes());
+
 /**
  * 监听错误
  */

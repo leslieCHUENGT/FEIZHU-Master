@@ -7,13 +7,13 @@ const {
     userRegisterError,
     userDoesNotExist,
     userLoginError,
-    invalidPassword,
-    samePassword
+    invalidPassword
 } = require('./user.ErrorMessage')
 
 /**
  * 登录或注册时校验是否为空
  */
+
 const userValidator = async (
     ctx: any,
     next: Next
